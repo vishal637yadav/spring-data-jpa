@@ -6,6 +6,6 @@ import org.springframework.data.repository.history.RevisionRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookInfoRepo extends RevisionRepository<BookInfo,Integer,Integer>, JpaRepository<BookInfo,Integer> {
+public interface BookInfoRepo extends JpaRepository<BookInfo,Integer> {
 
 }
