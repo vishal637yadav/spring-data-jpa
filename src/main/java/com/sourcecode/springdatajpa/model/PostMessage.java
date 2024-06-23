@@ -21,9 +21,16 @@ public class PostMessage {
     @Id
     @GeneratedValue
     private int postId;
-    private String postTitle;
-    private String postContent;
+    @Column(name = "POST_TITLE")
+    private String title;
+    @Column(name ="POST_CONTENT")
+    private String content;
 
+    private String goc;
+    private String legalEntity;
+    private String activeStatus;
+    private String approveStatus;
+    private String reviewerComment;
 
     @CreatedDate
     private Date createdDate;

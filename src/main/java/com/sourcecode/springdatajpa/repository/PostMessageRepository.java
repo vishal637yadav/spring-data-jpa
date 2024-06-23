@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostMessageRepository extends JpaRepository<PostMessage,Integer> {
 
+    public PostMessage findByPostId(int postId);
+
 }
 
