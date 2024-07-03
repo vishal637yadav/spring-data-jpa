@@ -25,10 +25,10 @@ public class PostMessageController {
 
         String responseMessage ;
         try {
-            service.savePost(request);
-            responseMessage = "Message Successfully Save to Database !!";
+
+            return service.savePost(request);
         } catch (Exception e) {
-            responseMessage = "Exception Occured ::"+e.getMessage();
+            responseMessage = "Exception Occurred while saving Post:::"+e.getMessage();
         }
         return responseMessage;
     }

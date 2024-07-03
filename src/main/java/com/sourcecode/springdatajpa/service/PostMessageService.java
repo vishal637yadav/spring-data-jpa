@@ -13,8 +13,11 @@ public class PostMessageService {
     @Autowired
     private PostMessageRepository repository;
 
-    public void savePost(PostMessage postMessage) throws Exception{
-        repository.save(postMessage);
+    public String savePost(PostMessage postMessage) throws Exception{
+        System.out.println(postMessage);
+        PostMessage savedPostMessage = repository.save(postMessage);
+        System.out.println(savedPostMessage);
+        return "New Post Message Successfully Saved to Database Assigned postId = "+postMessage.getPostId()+" !!";
     }
 
     public List<PostMessage> getPostList()
@@ -41,7 +44,7 @@ public class PostMessageService {
 
             //Data Saved in Database
             repository.save(existingPostMessage);
-            responseMessage = "Record Updated Successfully";
+            responseMessage = "Record with postId='"+postId+"' Updated Successfully !!!";
         }else{
             responseMessage = "Input postId='"+postId+"' do not exists in the DataBase So cannot be updated!!";
         }
